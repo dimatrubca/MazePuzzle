@@ -10,6 +10,7 @@ const helperMessage = document.getElementById("helper-message");
 const gridSelector = document.getElementById("grid-selector");
 const movesDisplay = document.getElementById("moves")
 const mazeContainer = document.getElementById("maze-container")
+const buttons = document.querySelectorAll("#grid-selector button")
 
 class Cell {
     constructor() {
@@ -157,7 +158,7 @@ function initializeGame() {
     primaryMessage.textContent = "Maze Puzzle";
     movesDisplay.textContent = "0";
     gridSelector.classList.add("no-display");
-    helperMessage.classList.add("no-display");
+    helperMessage.classList.remove("no-display");
 
     gameStarted = true;
 }
@@ -190,7 +191,6 @@ function extractNumbersFromString(str) {
     return numbers;
 }
 
-const buttons = document.querySelectorAll("#grid-selector button")
 buttons.forEach(btn => {
     btn.addEventListener("click", function(e) {
         // get grid dimensions from button content 
